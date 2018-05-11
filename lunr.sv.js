@@ -249,7 +249,22 @@
 
     lunr.Pipeline.registerFunction(lunr.sv.stemmer, 'stemmer-sv');
 
-    lunr.sv.stopWordFilter = lunr.generateStopWordFilter('alla allt att av blev bli blir blivit de dem den denna deras dess dessa det detta dig din dina ditt du där då efter ej eller en er era ert ett från för ha hade han hans har henne hennes hon honom hur här i icke ingen inom inte jag ju kan kunde man med mellan men mig min mina mitt mot mycket ni nu när någon något några och om oss på samma sedan sig sin sina sitta själv skulle som så sådan sådana sådant till under upp ut utan vad var vara varför varit varje vars vart vem vi vid vilka vilkas vilken vilket vår våra vårt än är åt över'.split(' '));
+    // ADD THIS - for hotfix
+    lunr.sv.stopWordFilter = lunr.stopWordFilter
+    lunr.sv.stopWordFilter.stopWords = { "alla" : true , "allt" : true , "att" : true , "av" : true , "blev" : true , "bli" : true , "blir" : true , 
+    "blivit" : true , "de" : true , "dem" : true , "den" : true , "denna" : true , "deras" : true , "dess" : true , "dessa" : true , "det" : true , 
+    "detta" : true , "dig" : true , "din" : true , "dina" : true , "ditt" : true , "du" : true , "där" : true , "då" : true , "efter" : true , "ej" : true , 
+    "eller" : true , "en" : true , "er" : true , "era" : true , "ert" : true , "ett" : true , "från" : true , "för" : true , "ha" : true , "hade" : true ,
+     "han" : true , "hans" : true , "har" : true , "henne" : true , "hennes" : true , "hon" : true , "honom" : true , "hur" : true , "här" : true , 
+     "i" : true , "icke" : true , "ingen" : true , "inom" : true , "inte" : true , "jag" : true , "ju" : true , "kan" : true , "kunde" : true , 
+     "man" : true , "med" : true , "mellan" : true , "men" : true , "mig" : true , "min" : true , "mina" : true , "mitt" : true , "mot" : true , 
+     "mycket" : true , "ni" : true , "nu" : true , "när" : true , "någon" : true , "något" : true , "några" : true , "och" : true , "om" : true ,
+      "oss" : true , "på" : true , "samma" : true , "sedan" : true , "sig" : true , "sin" : true , "sina" : true , "sitta" : true , "själv" : true , 
+      "skulle" : true , "som" : true , "så" : true , "sådan" : true , "sådana" : true , "sådant" : true , "till" : true , "under" : true , "upp" : true ,
+       "ut" : true , "utan" : true , "vad" : true , "var" : true , "vara" : true , "varför" : true , "varit" : true , "varje" : true , "vars" : true , 
+       "vart" : true , "vem" : true , "vi" : true , "vid" : true , "vilka" : true , "vilkas" : true , "vilken" : true , "vilket" : true , "vår" : true , 
+       "våra" : true , "vårt" : true , "än" : true , "är" : true , "åt" : true , "över" : true  }
+    // COMMENT | REMOVE => lunr.generateStopWordFilter('alla allt att av blev bli blir blivit de dem den denna deras dess dessa det detta dig din dina ditt du där då efter ej eller en er era ert ett från för ha hade han hans har henne hennes hon honom hur här i icke ingen inom inte jag ju kan kunde man med mellan men mig min mina mitt mot mycket ni nu när någon något några och om oss på samma sedan sig sin sina sitta själv skulle som så sådan sådana sådant till under upp ut utan vad var vara varför varit varje vars vart vem vi vid vilka vilkas vilken vilket vår våra vårt än är åt över'.split(' '));
 
     lunr.Pipeline.registerFunction(lunr.sv.stopWordFilter, 'stopWordFilter-sv');
   };
